@@ -3,103 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte | Inovação e Sustentabilidade</title>
-    <!-- Importação de Fonte Moderna -->
+    <title>Agro Forte | Futuro Sustentável</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        :root {
-            --primary: #1b5e20;
-            --secondary: #81c784;
-            --accent: #ffb300;
-            --dark: #1b1b1b;
-            --light: #f1f8e9;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
-        * {
-            margin: 0; padding: 0; box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body { background-color: var(--light); color: var(--dark); overflow-x: hidden; }
-
-        /* Navegação Fluida */
+        /* HEADER */
         header {
-            background: rgba(27, 94, 32, 0.95);
-            padding: 1.2rem 10%;
+            position: absolute;
+            width: 100%;
+            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: fixed; width: 100%; top: 0; z-index: 1000;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            z-index: 10;
         }
+        .logo { color: white; font-size: 1.5rem; font-weight: bold; }
+        .logo span { color: #81c784; }
 
-        .logo { color: white; font-weight: 700; font-size: 1.5rem; letter-spacing: -1px; }
-        .logo span { color: var(--secondary); }
-
-        nav a {
-            color: white; text-decoration: none; margin-left: 25px;
-            font-size: 0.9rem; transition: 0.3s; text-transform: uppercase;
-        }
-        nav a:hover { color: var(--secondary); }
-
-        /* Hero Section com Parallax */
+        /* SEÇÃO HERO COM FOTO DE FUNDO */
         .hero {
+            position: relative;
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
-                        url('https://unsplash.com');
-            background-size: cover; background-position: center; background-attachment: fixed;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            color: white; text-align: center; padding: 0 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            /* FOTO DE FUNDO AQUI */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                              url('https://unsplash.com');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efeito Parallax */
         }
 
-        .hero h1 { font-size: 4rem; margin-bottom: 15px; line-height: 1.1; }
-        .hero p { font-size: 1.2rem; max-width: 800px; font-weight: 300; opacity: 0.9; }
-
-        /* Seções de Informação */
-        .section-title { text-align: center; margin: 80px 0 40px; }
-        .section-title h2 { font-size: 2.5rem; color: var(--primary); }
-        .section-title .underline { 
-            width: 80px; height: 4px; background: var(--accent); margin: 10px auto; border-radius: 2px;
+        .hero h1 {
+            font-size: 4.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        /* Grid de Tecnologia */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px; margin-bottom: 80px;
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+            font-weight: 300;
         }
 
-        .card {
-            background: white; border-radius: 15px; overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
+        .btn-principal {
+            padding: 15px 40px;
+            background-color: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 2px solid transparent;
         }
-        .card:hover { transform: translateY(-10px); }
-        .card img { width: 100%; height: 200px; object-fit: cover; }
-        .card-body { padding: 25px; }
-        .card-body h3 { margin-bottom: 12px; color: var(--primary); }
-        .card-body p { font-size: 0.95rem; color: #666; line-height: 1.7; }
 
-        /* Call to Action Section */
-        .cta {
-            background: var(--primary); color: white;
-            padding: 80px 0; text-align: center;
+        .btn-principal:hover {
+            background-color: transparent;
+            border-color: white;
+            transform: scale(1.05);
         }
-        .btn {
-            display: inline-block; padding: 15px 35px; background: var(--accent);
-            color: var(--dark); text-decoration: none; border-radius: 50px;
-            font-weight: 700; margin-top: 25px; transition: 0.3s;
-        }
-        .btn:hover { background: #ffa000; transform: scale(1.05); }
 
-        footer { background: var(--dark); color: #888; padding: 40px 0; text-align: center; }
+        /* CONTEÚDO EXTRA */
+        .info-section {
+            padding: 80px 10%;
+            background: white;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .info-text { flex: 1; }
+        .info-text h2 { color: #1b5e20; font-size: 2.5rem; margin-bottom: 20px; }
+        .info-text p { color: #555; line-height: 1.8; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            nav { display: none; }
+            .info-section { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -107,79 +95,25 @@
 
     <header>
         <div class="logo">AGRO<span>FORTE</span></div>
-        <nav>
-            <a href="#pilares">Sustentabilidade</a>
-            <a href="#tech">Tecnologia</a>
-            <a href="#futuro">Futuro</a>
-        </nav>
     </header>
 
     <section class="hero">
-        <h1>O Amanhã é Cultivado Agora</h1>
-        <p>A força do campo aliada ao compromisso com a vida. Descubra como a agricultura moderna está liderando a regeneração do nosso planeta.</p>
-        <a href="#pilares" class="btn">Saiba Mais</a>
+        <h1>Agro Forte</h1>
+        <p>O futuro sustentável começa com a tecnologia e a preservação do campo hoje.</p>
+        <a href="#saiba-mais" class="btn-principal">Explorar Soluções</a>
     </section>
 
-    <div class="container" id="pilares">
-        <div class="section-title">
-            <h2>Pilares do Futuro</h2>
-            <div class="underline"></div>
+    <section id="saiba-mais" class="info-section">
+        <div class="info-text">
+            <h2>Sustentabilidade Real</h2>
+            <p>O conceito de <strong>Agro Forte</strong> baseia-se na harmonia entre alta produtividade e regeneração ambiental. Utilizamos sistemas de monitoramento via satélite e biotecnologia para garantir que cada hectare produza o máximo com o mínimo de impacto.</p>
+            <br>
+            <p>A agricultura do futuro não apenas extrai, ela devolve ao planeta através do sequestro de carbono e proteção de nascentes.</p>
         </div>
-
-        <div class="grid">
-            <!-- Card 1 -->
-            <div class="card">
-                <img src="https://unsplash.com" alt="Agricultura Regenerativa">
-                <div class="card-body">
-                    <h3>Regeneração do Solo</h3>
-                    <p>Práticas como o plantio direto e a rotação de culturas garantem que a terra recupere seus nutrientes naturalmente, eliminando o desperdício.</p>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="card" id="tech">
-                <img src="https://unsplash.com" alt="Tecnologia no Campo">
-                <div class="card-body">
-                    <h3>Inteligência Artificial</h3>
-                    <p>O uso de drones e sensores de umidade permite uma gestão milimétrica da lavoura, economizando até 40% de água e defensivos.</p>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="card">
-                <img src="https://unsplash.com" alt="Energia Limpa">
-                <div class="card-body">
-                    <h3>Energia Limpa</h3>
-                    <p>Fazendas solares e biomassa transformam resíduos em energia, tornando o ciclo de produção 100% autossustentável e carbono zero.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section class="cta" id="futuro">
-        <div class="container">
-            <h2>Junte-se à Revolução Verde</h2>
-            <p>Seja você produtor, investidor ou entusiasta, o futuro do agro depende da união entre eficiência e respeito à natureza.</p>
-            <a href="#" class="btn">Solicitar Consultoria</a>
+        <div style="flex: 1;">
+            <img src="https://unsplash.com" alt="Drones no Agro" style="width: 100%; border-radius: 15px; box-shadow: 10px 10px 30px rgba(0,0,0,0.1);">
         </div>
     </section>
-
-    <section class="container" style="padding: 80px 0;">
-        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 50px;">
-            <div style="flex: 1; min-width: 300px;">
-                <img src="https://unsplash.com" style="width: 100%; border-radius: 20px; box-shadow: 20px 20px 0 var(--secondary);">
-            </div>
-            <div style="flex: 1; min-width: 300px;">
-                <h2 style="color: var(--primary); margin-bottom: 20px;">Segurança Alimentar Global</h2>
-                <p style="margin-bottom: 15px;">Até 2050, o mundo precisará produzir 70% mais alimentos. Nosso desafio é fazer isso sem expandir áreas sobre florestas.</p>
-                <p>O <strong>Agro Forte</strong> trabalha com verticalização da produção: produzir mais no mesmo espaço através de biotecnologia e manejo avançado.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Agro Forte Futuro Sustentável. Desenvolvido para um planeta melhor.</p>
-    </footer>
 
 </body>
 </html>
