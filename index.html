@@ -3,156 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte: Futuro Sustentável</title>
+    <title>Agro Forte | Inovação e Sustentabilidade</title>
+    <!-- Importação de Fonte Moderna -->
+    <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        /* Estilos Básicos */
+        :root {
+            --primary: #1b5e20;
+            --secondary: #81c784;
+            --accent: #ffb300;
+            --dark: #1b1b1b;
+            --light: #f1f8e9;
+        }
+
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
-        body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f9f4;
-        }
+        body { background-color: var(--light); color: var(--dark); overflow-x: hidden; }
 
-        /* Cabeçalho e Navegação */
+        /* Navegação Fluida */
         header {
-            background-color: #2d5a27;
-            color: white;
-            padding: 1rem 5%;
+            background: rgba(27, 94, 32, 0.95);
+            padding: 1.2rem 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
         }
+
+        .logo { color: white; font-weight: 700; font-size: 1.5rem; letter-spacing: -1px; }
+        .logo span { color: var(--secondary); }
 
         nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
+            color: white; text-decoration: none; margin-left: 25px;
+            font-size: 0.9rem; transition: 0.3s; text-transform: uppercase;
         }
+        nav a:hover { color: var(--secondary); }
 
-        /* Banner Principal */
+        /* Hero Section com Parallax */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
                         url('https://unsplash.com');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
+            background-size: cover; background-position: center; background-attachment: fixed;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            color: white; text-align: center; padding: 0 20px;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
+        .hero h1 { font-size: 4rem; margin-bottom: 15px; line-height: 1.1; }
+        .hero p { font-size: 1.2rem; max-width: 800px; font-weight: 300; opacity: 0.9; }
+
+        /* Seções de Informação */
+        .section-title { text-align: center; margin: 80px 0 40px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--primary); }
+        .section-title .underline { 
+            width: 80px; height: 4px; background: var(--accent); margin: 10px auto; border-radius: 2px;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* Seções de Conteúdo */
-        .container {
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        .features {
+        /* Grid de Tecnologia */
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            gap: 30px; margin-bottom: 80px;
         }
 
         .card {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-top: 5px solid #2d5a27;
+            background: white; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
         }
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-body { padding: 25px; }
+        .card-body h3 { margin-bottom: 12px; color: var(--primary); }
+        .card-body p { font-size: 0.95rem; color: #666; line-height: 1.7; }
 
-        .card h3 {
-            color: #2d5a27;
-            margin-bottom: 15px;
+        /* Call to Action Section */
+        .cta {
+            background: var(--primary); color: white;
+            padding: 80px 0; text-align: center;
         }
-
-        /* Rodapé */
-        footer {
-            background: #1e3a1a;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
+        .btn {
+            display: inline-block; padding: 15px 35px; background: var(--accent);
+            color: var(--dark); text-decoration: none; border-radius: 50px;
+            font-weight: 700; margin-top: 25px; transition: 0.3s;
         }
+        .btn:hover { background: #ffa000; transform: scale(1.05); }
 
-        /* Responsividade */
+        footer { background: var(--dark); color: #888; padding: 40px 0; text-align: center; }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            nav { display: none; } /* Simplicidade para o exemplo */
+            nav { display: none; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">
-            <h2>Agro<span>Forte</span></h2>
-        </div>
+        <div class="logo">AGRO<span>FORTE</span></div>
         <nav>
-            <a href="#inicio">Início</a>
-            <a href="#pilares">Pilares</a>
-            <a href="#tecnologia">Tecnologia</a>
-            <a href="#contato">Contato</a>
+            <a href="#pilares">Sustentabilidade</a>
+            <a href="#tech">Tecnologia</a>
+            <a href="#futuro">Futuro</a>
         </nav>
     </header>
 
-    <section class="hero" id="inicio">
-        <h1>Agro Forte, Futuro Sustentável</h1>
-        <p>Unindo a força do campo com o respeito ao meio ambiente para alimentar as próximas gerações com inteligência e responsabilidade.</p>
+    <section class="hero">
+        <h1>O Amanhã é Cultivado Agora</h1>
+        <p>A força do campo aliada ao compromisso com a vida. Descubra como a agricultura moderna está liderando a regeneração do nosso planeta.</p>
+        <a href="#pilares" class="btn">Saiba Mais</a>
     </section>
 
     <div class="container" id="pilares">
-        <h2 style="text-align: center; font-size: 2rem; color: #2d5a27;">Nossos Pilares</h2>
-        
-        <div class="features">
+        <div class="section-title">
+            <h2>Pilares do Futuro</h2>
+            <div class="underline"></div>
+        </div>
+
+        <div class="grid">
+            <!-- Card 1 -->
             <div class="card">
-                <h3>Preservação Ambiental</h3>
-                <p>Uso consciente dos recursos hídricos e recuperação de áreas degradadas. O solo é nosso maior patrimônio.</p>
+                <img src="https://unsplash.com" alt="Agricultura Regenerativa">
+                <div class="card-body">
+                    <h3>Regeneração do Solo</h3>
+                    <p>Práticas como o plantio direto e a rotação de culturas garantem que a terra recupere seus nutrientes naturalmente, eliminando o desperdício.</p>
+                </div>
             </div>
-            <div class="card" id="tecnologia">
-                <h3>Tecnologia de Precisão</h3>
-                <p>Drones, sensores e IA aplicados para reduzir o uso de defensivos e aumentar a eficiência da colheita.</p>
+
+            <!-- Card 2 -->
+            <div class="card" id="tech">
+                <img src="https://unsplash.com" alt="Tecnologia no Campo">
+                <div class="card-body">
+                    <h3>Inteligência Artificial</h3>
+                    <p>O uso de drones e sensores de umidade permite uma gestão milimétrica da lavoura, economizando até 40% de água e defensivos.</p>
+                </div>
             </div>
+
+            <!-- Card 3 -->
             <div class="card">
-                <h3>Impacto Social</h3>
-                <p>Valorização do produtor rural e fortalecimento das economias locais através de práticas justas de mercado.</p>
+                <img src="https://unsplash.com" alt="Energia Limpa">
+                <div class="card-body">
+                    <h3>Energia Limpa</h3>
+                    <p>Fazendas solares e biomassa transformam resíduos em energia, tornando o ciclo de produção 100% autossustentável e carbono zero.</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <section class="container" style="text-align: center; background: #e8f5e9; padding: 40px; border-radius: 15px;">
-        <h2 style="color: #2d5a27;">O futuro já começou</h2>
-        <p>A agricultura sustentável não é apenas uma escolha, é o único caminho para a segurança alimentar global.</p>
+    <section class="cta" id="futuro">
+        <div class="container">
+            <h2>Junte-se à Revolução Verde</h2>
+            <p>Seja você produtor, investidor ou entusiasta, o futuro do agro depende da união entre eficiência e respeito à natureza.</p>
+            <a href="#" class="btn">Solicitar Consultoria</a>
+        </div>
+    </section>
+
+    <section class="container" style="padding: 80px 0;">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 50px;">
+            <div style="flex: 1; min-width: 300px;">
+                <img src="https://unsplash.com" style="width: 100%; border-radius: 20px; box-shadow: 20px 20px 0 var(--secondary);">
+            </div>
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="color: var(--primary); margin-bottom: 20px;">Segurança Alimentar Global</h2>
+                <p style="margin-bottom: 15px;">Até 2050, o mundo precisará produzir 70% mais alimentos. Nosso desafio é fazer isso sem expandir áreas sobre florestas.</p>
+                <p>O <strong>Agro Forte</strong> trabalha com verticalização da produção: produzir mais no mesmo espaço através de biotecnologia e manejo avançado.</p>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Agro Forte Futuro Sustentável - Todos os direitos reservados.</p>
+        <p>&copy; 2024 Agro Forte Futuro Sustentável. Desenvolvido para um planeta melhor.</p>
     </footer>
 
 </body>
