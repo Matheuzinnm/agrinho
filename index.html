@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte: Futuro Sustentável</title>
+    <style>
+        /* Estilos Básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f9f4;
+        }
+
+        /* Cabeçalho e Navegação */
+        header {
+            background-color: #2d5a27;
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        /* Banner Principal */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://unsplash.com');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+        }
+
+        /* Seções de Conteúdo */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-top: 5px solid #2d5a27;
+        }
+
+        .card h3 {
+            color: #2d5a27;
+            margin-bottom: 15px;
+        }
+
+        /* Rodapé */
+        footer {
+            background: #1e3a1a;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { display: none; } /* Simplicidade para o exemplo */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h2>Agro<span>Forte</span></h2>
+        </div>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#pilares">Pilares</a>
+            <a href="#tecnologia">Tecnologia</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h1>Agro Forte, Futuro Sustentável</h1>
+        <p>Unindo a força do campo com o respeito ao meio ambiente para alimentar as próximas gerações com inteligência e responsabilidade.</p>
+    </section>
+
+    <div class="container" id="pilares">
+        <h2 style="text-align: center; font-size: 2rem; color: #2d5a27;">Nossos Pilares</h2>
+        
+        <div class="features">
+            <div class="card">
+                <h3>Preservação Ambiental</h3>
+                <p>Uso consciente dos recursos hídricos e recuperação de áreas degradadas. O solo é nosso maior patrimônio.</p>
+            </div>
+            <div class="card" id="tecnologia">
+                <h3>Tecnologia de Precisão</h3>
+                <p>Drones, sensores e IA aplicados para reduzir o uso de defensivos e aumentar a eficiência da colheita.</p>
+            </div>
+            <div class="card">
+                <h3>Impacto Social</h3>
+                <p>Valorização do produtor rural e fortalecimento das economias locais através de práticas justas de mercado.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="container" style="text-align: center; background: #e8f5e9; padding: 40px; border-radius: 15px;">
+        <h2 style="color: #2d5a27;">O futuro já começou</h2>
+        <p>A agricultura sustentável não é apenas uma escolha, é o único caminho para a segurança alimentar global.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Agro Forte Futuro Sustentável - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
